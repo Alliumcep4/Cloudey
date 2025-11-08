@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudey</title>
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome desde jsDelivr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/all.min.css"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Login -->
+    <section class="login-screen">
+        <div class="profile-sphere">
+            <img src="img/star_grande.png" alt="star_profile">
+        </div>
+        <div class="welcome-box">
+            <h1>Welcome to <span>Cloudey</span></h1>
+        </div>
+        <button id="login-btn">Log in</button>
+    </section>
+
+    <!-- Fondo -->
+    <section class="fondo">
+        <img src="img/bg.png" alt="fondo">
+    </section>
+
+    <!-- Iconos de escritorio -->
+    <section class="iconos">
+        <div class="icono" id="skills">
+            <img src="img/archivo_grande.png" alt="skills">
+            <span>Skills</span>
+        </div>
+        <div class="icono" id="about">
+            <img src="img/foca_grande.png" alt="about">
+            <span>About_me</span>
+        </div>
+        <div class="icono" id="contact">
+            <img src="img/star_grande.png" alt="contact">
+            <span>Contact_me</span>
+        </div>
+        <div class="icono" id="projects">
+            <img src="img/carpeta_grande.png" alt="projects">
+            <span>Projects</span>
+        </div>
+    </section>
+
+    <!-- Barra superior tipo macOS -->
+    <section class="taskbar_superior">
+        <div class="taskbar-mac">
+            <div class="mac-left">
+                <i class="fa-brands fa-apple"></i>
+            </div>
+            <div class="mac-center">
+                <span>Cloudey</span>
+            </div>
+            <div class="mac-right">
+                <i class="fa-solid fa-wifi"></i>
+                <i class="fa-solid fa-battery-half"></i>
+                <span class="mac-clock">12:00</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barra inferior tipo Windows -->
+    <section class="taskbar_inferior">
+        <div id="taskbar">
+            <div class="icono_cl">
+                <img src="img/cl.png" alt="Inicio">
+            </div>
+            <div class="taskbar-icon" id="taskbar-skills">
+                <i class="fa-solid fa-folder"></i>
+            </div>
+            <div class="taskbar-icon" id="taskbar-about">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="taskbar-icon" id="taskbar-projects">
+                <i class="fa-solid fa-folder-open"></i>
+            </div>
+            <div class="taskbar-icon" id="taskbar-contact">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Skills -->
+    <section class="modal" id="skills-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Mis Habilidades Front-End</h2>
+            <p>Soy un desarrollador Front-End apasionado por crear interfaces modernas, limpias y responsivas. Mis habilidades incluyen:</p>
+            <ul>
+              <li>HTML5 & CSS3 (Flexbox, Grid, Animaciones)</li>
+              <li>JavaScript (ES6+, DOM, Fetch API)</li>
+              <li>React.js y frameworks modernos</li>
+              <li>Responsive Design & Mobile First</li>
+              <li>Git / GitHub & Control de versiones</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Otros modals -->
+    <section class="modal" id="about-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>About Me</h2>
+            <p>Información sobre mí...</p>
+        </div>
+    </section>
+
+    <section class="modal" id="projects-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Projects</h2>
+            <p>Listado de proyectos...</p>
+        </div>
+    </section>
+
+    <section class="modal" id="contact-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contact Me</h2>
+            <p>Formulario de contacto...</p>
+        </div>
+    </section>
+
+    <!-- Menú inicio tipo Windows -->
+    <div id="start-menu" class="start-menu">
+      <ul>
+        <li data-modal="skills-modal">Skills</li>
+        <li data-modal="about-modal">About Me</li>
+        <li data-modal="projects-modal">Projects</li>
+        <li data-modal="contact-modal">Contact Me</li>
+      </ul>
+    </div>
+
+    <!-- Panel Bye Bye -->
+    <div id="bye-panel" class="start-menu">
+        <ul>
+            <li>Bye Bye</li>
+        </ul>
+    </div>
+
+    <!-- Pantalla de apagado -->
+    <div id="shutdown-screen"></div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
