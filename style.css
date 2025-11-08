@@ -296,7 +296,7 @@ section.fondo.active {
 
 .start-menu {
   position: fixed;
-  bottom: 60px; /* justo encima de la taskbar */
+  bottom: 60px; 
   left: 10px;
   width: 220px;
   background: rgba(255,255,255,0.95);
@@ -324,6 +324,64 @@ section.fondo.active {
 
 .start-menu li:hover {
   background: rgba(100,180,255,0.2);
+}
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  justify-items: center;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 180px;
+  padding: 10px;
+  background: #444546; 
+  border: 2px solid #555; 
+  border-radius: 6px;
+  box-shadow:
+    inset 2px 2px 0 #fff8,  
+    inset -2px -2px 0 #0008, 
+    0 4px 8px rgba(0,0,0,0.5); 
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  background-clip: padding-box;
+}
+
+.project-card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.project-card span {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.1rem;
+  color: #e0e0e0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.project-card p {
+  font-family: 'Indie Flower', cursive;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 2px 2px 0 #fff8,
+    inset -2px -2px 0 #0008,
+    0 8px 16px rgba(0,0,0,0.6);
+  border-color: #8abfff;
 }
 
 
@@ -407,18 +465,6 @@ section.fondo.active {
   gap: 0.5rem;
 }
 
-/* Contenedor de ventanas abiertas */
-.open-windows {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    margin-left: 0.5rem;
-}
-
-/* Botón de ventana abierta */
-.window-indicator {
-    padding: 0.25rem 0.
-}
 
 /* Icono inicio */
 .icono_cl {

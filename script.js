@@ -73,12 +73,11 @@ document.querySelectorAll('.icono').forEach(icon => {
     });
 });
 
-/* Cerrar modales al clicar la X */
+/* Cerrar modales al clicar la X o fuera */
 modals.forEach(modal => {
     const closeBtn = modal.querySelector('.close-btn');
     closeBtn.addEventListener('click', () => closeModal(modal));
 
-    // Cerrar al clicar fuera
     modal.addEventListener('click', e => {
         if (e.target === modal) closeModal(modal);
     });
@@ -113,16 +112,32 @@ const appleIcon = document.querySelector('.mac-left i');
 const byePanel = document.getElementById('bye-panel');
 const shutdownScreen = document.getElementById('shutdown-screen');
 
-appleIcon.addEventListener('click', () => {
+appleIcon.addEventListener('click', (e) => {
+    e.stopPropagation();
     byePanel.style.display = 'flex';
     requestAnimationFrame(() => byePanel.classList.add('show'));
 
-    byePanel.addEventListener('click', () => {
+    // Cerrar solo la ventana al clicar fuera
+    function closeByePanel() {
         byePanel.classList.remove('show');
         setTimeout(() => {
             byePanel.style.display = 'none';
-            shutdownScreen.style.opacity = 1;
-            shutdownScreen.style.pointerEvents = 'auto';
         }, 300);
+        document.removeEventListener('click', outsideClick);
+    }
+
+    function outsideClick(e) {
+        if (!byePanel.contains(e.target) && e.target !== appleIcon) {
+            closeByePanel();
+        }
+    }
+
+    document.addEventListener('click', outsideClick);
+
+    // Cerrar e iniciar shutdown al clicar dentro del panel
+    byePanel.addEventListener('click', () => {
+        closeByePanel();
+        shutdownScreen.style.opacity = 1;
+        shutdownScreen.style.pointerEvents = 'auto';
     }, { once: true });
 });
